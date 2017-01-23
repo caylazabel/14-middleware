@@ -14,6 +14,10 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+// This is a declaring method. It calls
+// the function and passes it the
+// paramaters of the request. Its execution path is /article/:id.
+
   articleController.loadById = function(ctx, next) {
     var articleData = function(article) {
       ctx.articles = article;
@@ -23,6 +27,9 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  // This is a declaring method. It calls
+  // the function and passes it the
+  // paramaters of the request. Its execution path is /author/:authorName.
   articleController.loadByAuthor = function(ctx, next) {
     var authorData = function(articlesByAuthor) {
       ctx.articles = articlesByAuthor;
@@ -35,6 +42,9 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  // This is a declaring method. It calls
+  // the function and passes it the
+  // paramaters of the request. Its execution path is /catergory/:catergoryName
   articleController.loadByCategory = function(ctx, next) {
     var categoryData = function(articlesInCategory) {
       ctx.articles = articlesInCategory;
@@ -45,6 +55,11 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  // This methor creates a function called articleData.
+  // If anything is in the array, it assigns it to ctx.articles. It calls
+  // the function. If not, it runs the fetchAll method.
+  //  Its in route.js and its execution is '/'.
+  
   articleController.loadAll = function(ctx, next) {
     var articleData = function(allArticles) {
       ctx.articles = Article.allArticles;
